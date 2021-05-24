@@ -27,4 +27,9 @@ class Training extends Model
     {
     	return $this->hasMany(Resource::class);
     }
+
+    public function vendors()
+    {
+        return $this->hasOne(Vendor::class);
+    }
 }

@@ -95,7 +95,7 @@ class QuizController extends Controller
 
         $trainings->quizes()->save($quizes);
 
-        return redirect('quiz')->with('categoryaddesuccess','Category Added Successfully');
+        return redirect('admin/quiz')->with('categoryaddesuccess','Category Added Successfully');
 
     }
 

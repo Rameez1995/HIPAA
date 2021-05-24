@@ -46,7 +46,7 @@ class CategoryController extends Controller
         $categories->status="1";
         $categories->save();
 
-        return redirect('categories')->with('categoryaddesuccess','Category Added Successfully');
+        return redirect('admin/categories')->with('categoryaddesuccess','Category Added Successfully');
 
     }
 
@@ -56,7 +56,7 @@ class CategoryController extends Controller
         $categories->status=$request->status;
         $categories->update();
 
-        return redirect('categories')->with('categoryaddesuccess','Category Added Successfully');
+        return redirect('admin/categories')->with('categoryaddesuccess','Category Added Successfully');
 
     }
 
@@ -66,7 +66,7 @@ class CategoryController extends Controller
         $categories->status=$request->status;
         $categories->update();
 
-        return redirect('categories')->with('categoryaddesuccess','Category Added Successfully');
+        return redirect('admin/categories')->with('categoryaddesuccess','Category Added Successfully');
 
     }
 }

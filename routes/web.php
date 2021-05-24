@@ -51,8 +51,6 @@ Route::put('updateprofile', [App\Http\Controllers\EditProfileController::class, 
 Route::put('updatepassword', [App\Http\Controllers\EditProfileController::class, 'passwordupdate'])->name('update.password');
 
 
-
-
 Route::post('categories/statusupdate/active', [App\Http\Controllers\CategoryController::class, 'statusupdateactive'])->name('category-status-active-update');
 Route::post('categories/statusupdate/inactive', [App\Http\Controllers\CategoryController::class, 'statusupdateinactive'])->name('category-status-inactive-update');
 
@@ -70,6 +68,27 @@ Route::post('quiz/store', [App\Http\Controllers\QuizController::class, 'store'])
 
 Route::post('resources/store', [App\Http\Controllers\ResourceController::class, 'store'])->name('resources.store');
 
+
+    /** Training Routes */
+Route::get('userregistration', [App\Http\Controllers\Auth\UserRegistrationController::class, 'index'])->name('userregistration.index');
+Route::get('userregistration/create', [App\Http\Controllers\Auth\UserRegistrationController::class, 'create'])->name('userregistration.create');
+Route::post('userregistration/store', [App\Http\Controllers\Auth\UserRegistrationController::class, 'store'])->name('userregistration.store');
+Route::get('userregistrationdetails/{id}',[App\Http\Controllers\Auth\UserRegistrationController::class, 'display']);
+Route::get('userregistration/{id}/edit', [App\Http\Controllers\Auth\UserRegistrationController::class, 'edit'])->name('userregistration.edit');
+Route::post('userregistration/update', [App\Http\Controllers\Auth\UserRegistrationController::class, 'update'])->name('userregistration.update');
+Route::post('userregistration/statusupdate/active', [App\Http\Controllers\Auth\UserRegistrationController::class, 'statusupdateactive'])->name('user-status-active-update');
+Route::post('userregistration/statusupdate/inactive', [App\Http\Controllers\Auth\UserRegistrationController::class, 'statusupdateinactive'])->name('user-status-inactive-update');
+
+Route::get('userregistration/getcategories/{id}', [App\Http\Controllers\Auth\UserRegistrationController::class, 'getcategories'])->name('userregistration.getcategories');
+Route::get('userregistration/getcompanies/{id}', [App\Http\Controllers\Auth\UserRegistrationController::class, 'getcompanies'])->name('userregistration.getcompanies');
+Route::get('userregistration/gettrainings/{id}', [App\Http\Controllers\Auth\UserRegistrationController::class, 'gettrainings'])->name('userregistration.gettrainings');
+
+
+    
+Route::get('companies', [App\Http\Controllers\CompanyController::class, 'index'])->name('companies.index');   
+Route::post('companies/store', [App\Http\Controllers\CompanyController::class, 'store'])->name('companies.store');
+
+
 });
 
 
@@ -79,5 +98,5 @@ Route::prefix('vendor')->group(function(){
     Route::get('/login', 'App\Http\Controllers\Auth\VendorLoginController@showLoginForm')->name('vendor.login');
     Route::post('/login', 'App\Http\Controllers\Auth\VendorLoginController@login')->name('vendor.login.submit');
     Route::get('/register', 'App\Http\Controllers\Auth\VendorRegisterController@showRegisterForm')->name('vendor.register');
-    Route::post('/register', 'App\Http\Controllers\Auth\VendorRegisterController@register')->name('vendor.register.submit');
+    Route::post('/register', 'App\Http\Controllers\Auth\UserRegisterController@register')->name('vendor.register.submit');
 });

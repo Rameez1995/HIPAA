@@ -17,6 +17,7 @@ class TrainingController extends Controller
     public function index()
     {
         $trainings = Training::with('categories')->get();
+        dd($trainings);
         return View('trainings.index',compact('trainings')); 
     }
 
@@ -47,6 +48,7 @@ class TrainingController extends Controller
 
     public function store(Request $request)
     {
+       
         $request->validate([
             'training_id'     => 'required',
             'training_name'     => 'required',
@@ -70,7 +72,7 @@ class TrainingController extends Controller
 
         $categories->trainings()->save($training);
 
-        return redirect('trainings')->with('categoryaddesuccess','Category Added Successfully');
+        return redirect('admin/trainings')->with('categoryaddesuccess','Category Added Successfully');
 
     }
 

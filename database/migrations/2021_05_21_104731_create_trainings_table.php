@@ -18,7 +18,7 @@ class CreateTrainingsTable extends Migration
             $table->string('training_id');
             $table->string('training_name');
             $table->string('pass_percentage');
-            $table->string('description');
+            $table->text('description');
             $table->string('image');
             $table->string('status');
             $table->timestamps();

@@ -54,7 +54,7 @@
                                                         <div class="btn-group custom-dropdown ml-2 mb-1">
                                                             <button type="button" class="btn btn-drop-table btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-ellipsis-v"></i></button>
                                                             <div class="dropdown-menu custom-dropdown"> 
-                                                                <a href="{{ url('trainingdetails/'.$training->id)}}"  class="dropdown-item"><i class="fa fa-eye" aria-hidden="true"></i>View</a>
+                                                                <a href="{{ url('admin/trainingdetails/'.$training->id)}}"  class="dropdown-item"><i class="fa fa-eye" aria-hidden="true"></i>View</a>
                                                             </div>
                                                         </div>
                                                        </form>

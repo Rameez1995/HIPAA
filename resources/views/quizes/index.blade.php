@@ -118,7 +118,7 @@
                     <input type="hidden" name="training_id" class="site-input w-100" value="{{$training_id}}">
 
                     <p class="modal-heading text-center">Add Question</p>
-                    <p class="mt-1 black-text mb-0">Q3:</p>
+                    <p class="mt-1 black-text mb-0">{{$quiz->question_number}}:</p>
                     <textarea name="question" id="" cols="30" rows="5" class="w-100 site-input" placeholder="Enter Question" required></textarea>
                     <p class="mt-2 black-text mb-0">Upload Image:</p>
                     <div class="d-flex">
